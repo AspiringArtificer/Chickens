@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
+### Added
+- Spawn weight and minimum spawn distance configuration settings
+- Wither Skeleton Chicken
+- Wither Chicken
+### Fixed
+- Prismarine chicken french names
+- Bone White Chicken now lays bone meal by default
+
 ## [1.0.30] 2022.11.16
 ### Fixed
 - Containers not closing when block is broken
