@@ -7,6 +7,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.Tags;
 
 import javax.annotation.Nullable;
+import java.util.Objects;
 
 public class ChickensRegistryItem
 {
@@ -147,6 +148,10 @@ public class ChickensRegistryItem
     {
         if (parent1 == null || parent2 == null)
         {
+            if(Objects.equals(entityName, "dangerous_wither_chicken"))
+            {
+                return 8;
+            }
             return 1;
         }
         return Math.max(parent1.getTier(), parent2.getTier()) + 1;

@@ -76,6 +76,9 @@
   "entity.chickens.pcrystal_chicken":"Prismarine Crystal Chicken",
   "entity.chickens.obsidian_chicken":"Obsidian Chicken",
   "entity.chickens.soulsand_chicken":"Soul Sand Chicken",
+  "entity.chickens.black_skull_chicken":"Wither Skeleton Chicken",
+  "entity.chickens.wither_chicken":"Wither Chicken",
+  "entity.chickens.dangerous_wither_chicken":"Dangerous Wither Chicken",
 
   "entity.ChickensChicken.tier":"Tier",
   "entity.ChickensChicken.layProgress":"Next egg in ~%1$smin.",

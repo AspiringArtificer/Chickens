@@ -27,6 +27,7 @@ public class ModChickens
         List<ChickensRegistryItem> chickens = new ArrayList<ChickensRegistryItem>();
 
         chickens.add(new ChickensRegistryItem(ChickensRegistry.SMART_CHICKEN_ID, "smart_chicken", new ResourceLocation("chickens", "textures/entity/smart_chicken.png"), new ItemStack(Items.EGG), 0xffffff, 0xffff00).setSpawnType(SpawnType.NONE));
+        chickens.add(new ChickensRegistryItem(ChickensRegistry.DANGEROUS_WITHER_CHICKEN_ID, "dangerous_wither_chicken", new ResourceLocation("chickens", "textures/entity/dangerous_wither_chicken.png"), new ItemStack(Items.NETHER_STAR), 0x9ec4f1, 0x406289).setSpawnType(SpawnType.NONE));
 
         // dye chickens
         ChickensRegistryItem whiteChicken = createDyeChicken(DyeColor.WHITE, "white_chicken").setLayItem(new ItemStack(Items.BONE_MEAL)).setDropItem(new ItemStack(Items.BONE)).setSpawnType(SpawnType.NORMAL);
@@ -70,6 +71,9 @@ public class ModChickens
 
         ChickensRegistryItem sandChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "sand_chicken"), "sand_chicken", new ResourceLocation("chickens", "textures/entity/sand_chicken.png"), new ItemStack(Blocks.SAND), 0xece5b1, 0xa7a06c);
         chickens.add(sandChicken);
+
+        ChickensRegistryItem soulSandChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "soulsand_chicken"), "soulsand_chicken", new ResourceLocation("chickens", "textures/entity/soulsand_chicken.png"), new ItemStack(Blocks.SOUL_SAND, 1), 0x453125, 0xd52f08).setSpawnType(SpawnType.HELL);
+        chickens.add(soulSandChicken);
 
         // Tier 2
         ChickensRegistryItem stringChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "string_chicken"), "string_chicken", new ResourceLocation("chickens", "textures/entity/string_chicken.png"), new ItemStack(Items.STRING), 0x331a00, 0x800000, blackChicken, logChicken).setDropItem(new ItemStack(Items.SPIDER_EYE));
@@ -150,8 +154,13 @@ public class ModChickens
         ChickensRegistryItem obsidianChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "obsidian_chicken"), "obsidian_chicken", new ResourceLocation("chickens", "textures/entity/obsidian_chicken.png"), new ItemStack(Blocks.OBSIDIAN, 1), 0x08080e, 0x463a60, waterChicken, lavaChicken);
         chickens.add(obsidianChicken);
 
-        ChickensRegistryItem soulSandChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "soulsand_chicken"), "soulsand_chicken", new ResourceLocation("chickens", "textures/entity/soulsand_chicken.png"), new ItemStack(Blocks.SOUL_SAND, 1), 0x453125, 0xd52f08).setSpawnType(SpawnType.HELL);
-        chickens.add(soulSandChicken);
+        // Tier 6
+        ChickensRegistryItem blackSkullChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "black_skull_chicken"), "black_skull_chicken", new ResourceLocation("chickens", "textures/entity/black_skull_chicken.png"), new ItemStack(Items.WITHER_ROSE), 0xa5a5a5, 0x3c4141, whiteChicken, ghastChicken).setDropItem(new ItemStack(Items.WITHER_SKELETON_SKULL));
+        chickens.add(blackSkullChicken);
+
+        // Tier 7
+        ChickensRegistryItem witherChicken = new ChickensRegistryItem(ChickensRegistry.WITHER_CHICKEN_ID, "wither_chicken", new ResourceLocation("chickens", "textures/entity/wither_chicken.png"), new ItemStack(Items.WITHER_SKELETON_SKULL), 0xa5a5a5, 0x3c4141, blackSkullChicken, soulSandChicken);
+        chickens.add(witherChicken);
 
         return chickens;
     }
