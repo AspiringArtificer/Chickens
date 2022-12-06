@@ -21,6 +21,8 @@ public class ChickensRegistryItem
     private ChickensRegistryItem parent1;
     private ChickensRegistryItem parent2;
     private SpawnType spawnType;
+    private int spawnDistance;
+    private int spawnWeight;
     private boolean isEnabled = true;
     private float layCoefficient = 1.0f;
 
@@ -43,6 +45,8 @@ public class ChickensRegistryItem
         this.fgColor = fgColor;
         this.texture = texture;
         this.spawnType = SpawnType.NORMAL;
+        this.spawnDistance = 1000;
+        this.spawnWeight = 10;
         this.parent1 = parent1;
         this.parent2 = parent2;
     }
@@ -72,6 +76,18 @@ public class ChickensRegistryItem
     public ChickensRegistryItem setSpawnType(SpawnType type)
     {
         spawnType = type;
+        return this;
+    }
+
+    public ChickensRegistryItem setSpawnDistance(int distance)
+    {
+        spawnDistance = distance;
+        return this;
+    }
+
+    public ChickensRegistryItem setSpawnWeight(int weight)
+    {
+        spawnWeight = weight;
         return this;
     }
 
@@ -170,6 +186,10 @@ public class ChickensRegistryItem
     {
         return spawnType;
     }
+
+    public int getSpawnDistance() { return spawnDistance; }
+
+    public int getSpawnWeight() { return spawnWeight; }
 
     public boolean isImmuneToFire()
     {

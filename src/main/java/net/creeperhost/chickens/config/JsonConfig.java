@@ -155,6 +155,36 @@ public class JsonConfig
     }
 
 
+    /**
+     * Get or set an integer
+     *
+     * @param categoryProperty
+     * @param property
+     * @param value
+     * @param min
+     * @param max
+     * @return
+     */
+    public int getInt(String categoryProperty, String property, int value, int min, int max)
+    {
+
+        JsonObject object = getCategory(categoryProperty);
+        if (object.has(property))
+        {
+            value = object.get(property).getAsInt();
+        } else
+        {
+            object.addProperty(property, value);
+            setHasChanged(true);
+        }
+
+        if (value > max) value = max;
+        if (value < min) value = min;
+
+        return value;
+    }
+
+
     @Nullable
     public ItemHolder getItemHolder(String categoryProperty, String property, ItemHolder defaultItemHolder)
     {

@@ -61,6 +61,8 @@ public class ConfigHandler
             config.getFullJson().get(comment).getAsJsonObject().add("lay_item_example", new ItemHolder(new ItemStack(Items.GOLD_INGOT), true).writeJsonObject(new JsonObject()));
             config.getString(comment, "drop_item", "Item the chicken will Lay. Changing the qty will double that amount on each gain bonus. ");
             config.getString(comment, "spawn_type", "Chicken spawn type, can be: " + String.join(",", SpawnType.names()));
+            config.getString(comment, "spawn_distance", "Minimal distance from World Spawn in the X and Z axes before the chicken can spawn.");
+            config.getString(comment, "spawn_weight", "Likelihood of a chicken pack to spawn given correct conditions. Range 1-100. Normal chickens have a weight of 10.");
             config.getString(comment, "parent_1", "First parent, empty if it cant be breed. modid:chickenid #example: chickens:waterchicken");
             config.getString(comment, "parent_2", "Second parent, empty if it cant be breed. ");
 
@@ -82,6 +84,12 @@ public class ConfigHandler
 
                 SpawnType spawnType = SpawnType.valueOf(config.getString(registryName, "spawn_type", chicken.getSpawnType().toString()));
                 chicken.setSpawnType(spawnType);
+
+                int spawnDistance = config.getInt(registryName, "spawn_distance", 1000, 0, 10000000);
+                chicken.setSpawnDistance(spawnDistance);
+
+                int spawnWeight = config.getInt(registryName, "spawn_weight", 10, 1, 100);
+                chicken.setSpawnWeight(spawnWeight);
 
                 ChickensRegistry.register(chicken);
             }
@@ -126,6 +134,8 @@ public class ConfigHandler
                             nbt = stringJsonElementEntry.getValue().getAsJsonObject().getAsJsonObject("lay_item").getAsJsonObject("nbt").toString();
                         }
                         String spawn_type = stringJsonElementEntry.getValue().getAsJsonObject().getAsJsonPrimitive("spawn_type").getAsString();
+                        int spawnDistance = stringJsonElementEntry.getValue().getAsJsonObject().getAsJsonPrimitive("spawn_distance").getAsInt();
+                        int spawnWeight = stringJsonElementEntry.getValue().getAsJsonObject().getAsJsonPrimitive("spawn_weight").getAsInt();
 
                         String parent1Name = stringJsonElementEntry.getValue().getAsJsonObject().getAsJsonPrimitive("parent_1").getAsString();
                         String parent2Name = stringJsonElementEntry.getValue().getAsJsonObject().getAsJsonPrimitive("parent_2").getAsString();
@@ -146,6 +156,8 @@ public class ConfigHandler
                         chickensRegistryItem.setEnabled(enabled);
                         chickensRegistryItem.setLayCoefficient(layCoefficient);
                         chickensRegistryItem.setSpawnType(spawnType);
+                        chickensRegistryItem.setSpawnDistance(spawnDistance);
+                        chickensRegistryItem.setSpawnWeight(spawnWeight);
 
                         ChickensRegistry.register(chickensRegistryItem);
                     } catch (Exception e)

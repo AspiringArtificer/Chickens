@@ -48,6 +48,7 @@ public class ModEntities
     public static boolean checkAnimalSpawnRules(EntityType<? extends Animal> entityType, LevelAccessor levelAccessor, MobSpawnType mobSpawnType, BlockPos blockPos, Random random, ChickensRegistryItem chickensRegistryItem)
     {
         if(!levelAccessor.getBlockState(blockPos.below()).is(BlockTags.ANIMALS_SPAWNABLE_ON)) return false;
+        if(isNearWorldSpawn(levelAccessor, blockPos, chickensRegistryItem.getSpawnDistance())) return false;
         if(!isBrightEnoughToSpawn(levelAccessor, blockPos)) return false;
         if(!chickensRegistryItem.canSpawn()) return false;
         if(chickensRegistryItem.getSpawnType() == SpawnType.NORMAL)
@@ -59,6 +60,23 @@ public class ModEntities
             return levelAccessor.dimensionType().piglinSafe();
         }
         return true;
+    }
+
+    public static boolean isNearWorldSpawn(LevelAccessor levelAccessor, BlockPos blockPos, int spawnDistance)
+    {
+        int xPos = blockPos.getX();
+        int zPos = blockPos.getZ();
+        int xSpawn = levelAccessor.getLevelData().getXSpawn();
+        int zSpawn = levelAccessor.getLevelData().getZSpawn();
+
+        if(xPos < xSpawn + spawnDistance
+            && zPos < xSpawn + spawnDistance
+            && xPos > xSpawn - spawnDistance
+            && zPos > xSpawn - spawnDistance)
+        {
+            return true;
+        }
+        return false;
     }
 
     public static boolean isBrightEnoughToSpawn(BlockAndTintGetter blockAndTintGetter, BlockPos blockPos)

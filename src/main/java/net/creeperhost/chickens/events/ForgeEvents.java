@@ -4,6 +4,7 @@ import net.creeperhost.chickens.ChickensMod;
 import net.creeperhost.chickens.entity.EntityChickensChicken;
 import net.creeperhost.chickens.init.ModEntities;
 import net.creeperhost.chickens.registry.ChickensRegistry;
+import net.creeperhost.chickens.registry.ChickensRegistryItem;
 import net.minecraft.core.Registry;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -28,7 +29,7 @@ public class ForgeEvents
         {
             try
             {
-                event.getSpawns().addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(entityType, 10, 4, 4));
+                event.getSpawns().addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(entityType, ChickensRegistry.getByResourceLocation(entityType.getRegistryName()).getSpawnWeight(), 2, 4));
             }
             catch (Exception ignored){}
         });
