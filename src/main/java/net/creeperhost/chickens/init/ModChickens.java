@@ -29,7 +29,7 @@ public class ModChickens
         chickens.add(new ChickensRegistryItem(ChickensRegistry.SMART_CHICKEN_ID, "smart_chicken", new ResourceLocation("chickens", "textures/entity/smart_chicken.png"), new ItemStack(Items.EGG), 0xffffff, 0xffff00).setSpawnType(SpawnType.NONE));
 
         // dye chickens
-        ChickensRegistryItem whiteChicken = createDyeChicken(DyeColor.WHITE, "white_chicken").setDropItem(new ItemStack(Items.BONE)).setSpawnType(SpawnType.NORMAL);
+        ChickensRegistryItem whiteChicken = createDyeChicken(DyeColor.WHITE, "white_chicken").setLayItem(new ItemStack(Items.BONE_MEAL)).setDropItem(new ItemStack(Items.BONE)).setSpawnType(SpawnType.NORMAL);
         chickens.add(whiteChicken);
         ChickensRegistryItem yellowChicken = createDyeChicken(DyeColor.YELLOW, "yellow_chicken");
         chickens.add(yellowChicken);

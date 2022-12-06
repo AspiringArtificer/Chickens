@@ -211,9 +211,10 @@ public class ChickensRegistryItem
         layItem = itemHolder;
     }
 
-    public void setLayItem(ItemStack itemstack)
+    public ChickensRegistryItem setLayItem(ItemStack itemstack)
     {
         setLayItem(new ItemHolder(itemstack, false));
+        return this;
     }
 
     public void setNoParents()
