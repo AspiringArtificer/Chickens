@@ -79,6 +79,9 @@ public class ModChickens
         ChickensRegistryItem stringChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "string_chicken"), "string_chicken", new ResourceLocation("chickens", "textures/entity/string_chicken.png"), new ItemStack(Items.STRING), 0x331a00, 0x800000, blackChicken, logChicken).setDropItem(new ItemStack(Items.SPIDER_EYE));
         chickens.add(stringChicken);
 
+        ChickensRegistryItem copperChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "copper_chicken"), "copper_chicken", new ResourceLocation("chickens", "textures/entity/copper_chicken.png"), new ItemStack(Items.RAW_COPPER), 0x56847e, 0x54b972, flintChicken, blueChicken);
+        chickens.add(copperChicken);
+
         ChickensRegistryItem glowstoneChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "glowstone_chicken"), "glowstone_chicken", new ResourceLocation("chickens", "textures/entity/glowstone_chicken.png"), new ItemStack(Items.GLOWSTONE_DUST), 0xffff66, 0xffff00, quartzChicken, yellowChicken);
         chickens.add(glowstoneChicken);
 
@@ -91,9 +94,6 @@ public class ModChickens
         ChickensRegistryItem glassChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "glass_chicken"), "glass_chicken", new ResourceLocation("chickens", "textures/entity/glass_chicken.png"), new ItemStack(Blocks.GLASS), 0xffffff, 0xeeeeff, quartzChicken, redstoneChicken);
         chickens.add(glassChicken);
 
-        ChickensRegistryItem ironChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "iron_chicken"), "iron_chicken", new ResourceLocation("chickens", "textures/entity/iron_chicken.png"), new ItemStack(Items.IRON_NUGGET), 0xffffcc, 0xffcccc, flintChicken, whiteChicken);
-        chickens.add(ironChicken);
-
         ChickensRegistryItem coalChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "coal_chicken"), "coal_chicken", new ResourceLocation("chickens", "textures/entity/coal_chicken.png"), new ItemStack(Items.COAL), 0x262626, 0x000000, flintChicken, logChicken);
         chickens.add(coalChicken);
 
@@ -101,8 +101,8 @@ public class ModChickens
         chickens.add(brownChicken);
 
 		// tier 3
-        ChickensRegistryItem goldChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "gold_chicken"), "gold_chicken", new ResourceLocation("chickens", "textures/entity/gold_chicken.png"), new ItemStack(Items.GOLD_NUGGET), 0xcccc00, 0xffff80, ironChicken, yellowChicken);
-        chickens.add(goldChicken);
+        ChickensRegistryItem ironChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "iron_chicken"), "iron_chicken", new ResourceLocation("chickens", "textures/entity/iron_chicken.png"), new ItemStack(Items.RAW_IRON), 0xffffcc, 0xffcccc, flintChicken, grayChicken);
+        chickens.add(ironChicken);
 
         ChickensRegistryItem snowballChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "snowball_chicken"), "snowball_chicken", new ResourceLocation("chickens", "textures/entity/snowball_chicken.png"), new ItemStack(Items.SNOWBALL), 0x33bbff, 0x0088cc, blueChicken, logChicken).setSpawnType(SpawnType.SNOW);
         chickens.add(snowballChicken);
@@ -125,6 +125,9 @@ public class ModChickens
         // Tier 4
         ChickensRegistryItem diamondChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "diamond_chicken"), "diamond_chicken", new ResourceLocation("chickens", "textures/entity/diamond_chicken.png"), new ItemStack(Items.DIAMOND), 0x99ccff, 0xe6f2ff, glassChicken, goldChicken);
         chickens.add(diamondChicken);
+
+        ChickensRegistryItem goldChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "gold_chicken"), "gold_chicken", new ResourceLocation("chickens", "textures/entity/gold_chicken.png"), new ItemStack(Items.RAW_GOLD), 0xcccc00, 0xffff80, ironChicken, yellowChicken);
+        chickens.add(goldChicken);
 
         ChickensRegistryItem blazeChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "blaze_chicken"), "blaze_chicken", new ResourceLocation("chickens", "textures/entity/blaze_chicken.png"), new ItemStack(Items.BLAZE_ROD), 0xffff66, 0xff3300, goldChicken, lavaChicken);
         chickens.add(blazeChicken);
