@@ -6,8 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [Unreleased]
 ### Added
 - Spawn weight and minimum spawn distance configuration settings
-- Wither Skeleton Chicken
-- Wither Chicken
+- Copper Chicken, Wither Skeleton Chicken, Wither Chicken
 ### Fixed
 - Prismarine chicken french names
 - Bone White Chicken now lays bone meal by default
