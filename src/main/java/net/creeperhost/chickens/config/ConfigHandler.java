@@ -85,10 +85,10 @@ public class ConfigHandler
                 SpawnType spawnType = SpawnType.valueOf(config.getString(registryName, "spawn_type", chicken.getSpawnType().toString()));
                 chicken.setSpawnType(spawnType);
 
-                int spawnDistance = config.getInt(registryName, "spawn_distance", 1000, 0, 10000000);
+                int spawnDistance = config.getInt(registryName, "spawn_distance", chicken.getSpawnDistance(), 0, 10000000);
                 chicken.setSpawnDistance(spawnDistance);
 
-                int spawnWeight = config.getInt(registryName, "spawn_weight", 10, 1, 100);
+                int spawnWeight = config.getInt(registryName, "spawn_weight", chicken.getSpawnWeight(), 1, 100);
                 chicken.setSpawnWeight(spawnWeight);
 
                 ChickensRegistry.register(chicken);
