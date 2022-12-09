@@ -132,7 +132,8 @@ public class BlockEntityRoost extends BlockEntity implements MenuProvider
         {
             if (canRun())
             {
-                if(progress <= 1000) {
+                if(progress <= ChickensRegistry.getByRegistryName(ItemChicken.getTypeFromStack(inventory.getStackInSlot(0))).getMinLayTime())
+                {
                     progress += getProgressValue(inventory.getStackInSlot(0));
                 }
                 else
@@ -157,8 +158,7 @@ public class BlockEntityRoost extends BlockEntity implements MenuProvider
     public int getProgressValue(ItemStack itemStack)
     {
         ChickenStats chickenStats = new ChickenStats(itemStack);
-        int count = itemStack.getCount();
-        int value = (chickenStats.getGrowth() + count) +1;
+        int value = chickenStats.getGrowth() + 1;
         return Math.min(value, 50);
     }
 
