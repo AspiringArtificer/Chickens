@@ -63,17 +63,17 @@ public class ModChickens
         ChickensRegistryItem flintChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "flint_chicken"), "flint_chicken", new ResourceLocation("chickens", "textures/entity/flint_chicken.png"), new ItemStack(Items.FLINT), 0x6b6b47, 0xa3a375);
         chickens.add(flintChicken);
 
-        ChickensRegistryItem quartzChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "quartz_chicken"), "quartz_chicken", new ResourceLocation("chickens", "textures/entity/quartz_chicken.png"), new ItemStack(Items.QUARTZ), 0x4d0000, 0x1a0000).setSpawnType(SpawnType.HELL);
-        chickens.add(quartzChicken);
-
         ChickensRegistryItem logChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "log_chicken"), "log_chicken", new ResourceLocation("chickens", "textures/entity/log_chicken.png"), new ItemStack(Blocks.OAK_LOG), 0x98846d, 0x528358);
         chickens.add(logChicken);
 
         ChickensRegistryItem sandChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "sand_chicken"), "sand_chicken", new ResourceLocation("chickens", "textures/entity/sand_chicken.png"), new ItemStack(Blocks.SAND), 0xece5b1, 0xa7a06c);
         chickens.add(sandChicken);
 
-        ChickensRegistryItem soulSandChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "soulsand_chicken"), "soulsand_chicken", new ResourceLocation("chickens", "textures/entity/soulsand_chicken.png"), new ItemStack(Blocks.SOUL_SAND, 1), 0x453125, 0xd52f08).setSpawnType(SpawnType.HELL);
+        ChickensRegistryItem soulSandChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "soulsand_chicken"), "soulsand_chicken", new ResourceLocation("chickens", "textures/entity/soulsand_chicken.png"), new ItemStack(Blocks.SOUL_SAND, 1), 0x453125, 0xd52f08).setSpawnType(SpawnType.HELL).setSpawnDistance(500);
         chickens.add(soulSandChicken);
+
+        ChickensRegistryItem quartzChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "quartz_chicken"), "quartz_chicken", new ResourceLocation("chickens", "textures/entity/quartz_chicken.png"), new ItemStack(Items.QUARTZ), 0x4d0000, 0x1a0000).setSpawnType(SpawnType.HELL).setSpawnDistance(500);
+        chickens.add(quartzChicken);
 
         // Tier 2
         ChickensRegistryItem stringChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "string_chicken"), "string_chicken", new ResourceLocation("chickens", "textures/entity/string_chicken.png"), new ItemStack(Items.STRING), 0x331a00, 0x800000, blackChicken, logChicken).setDropItem(new ItemStack(Items.SPIDER_EYE));
