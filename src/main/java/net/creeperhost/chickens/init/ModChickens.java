@@ -98,15 +98,15 @@ public class ModChickens
         ChickensRegistryItem coalChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "coal_chicken"), "coal_chicken", new ResourceLocation("chickens", "textures/entity/coal_chicken.png"), new ItemStack(Items.COAL), 0x262626, 0x000000, flintChicken, logChicken);
         chickens.add(coalChicken);
 
+        ChickensRegistryItem snowballChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "snowball_chicken"), "snowball_chicken", new ResourceLocation("chickens", "textures/entity/snowball_chicken.png"), new ItemStack(Items.SNOWBALL), 0x33bbff, 0x0088cc, blueChicken, logChicken).setSpawnType(SpawnType.SNOW);
+        chickens.add(snowballChicken);
+
         ChickensRegistryItem brownChicken = createDyeChicken(DyeColor.BROWN, "brown_chicken").setParentsNew(redChicken, greenChicken);
         chickens.add(brownChicken);
 
 		// tier 3
         ChickensRegistryItem ironChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "iron_chicken"), "iron_chicken", new ResourceLocation("chickens", "textures/entity/iron_chicken.png"), new ItemStack(Items.RAW_IRON), 0xffffcc, 0xffcccc, flintChicken, grayChicken);
         chickens.add(ironChicken);
-
-        ChickensRegistryItem snowballChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "snowball_chicken"), "snowball_chicken", new ResourceLocation("chickens", "textures/entity/snowball_chicken.png"), new ItemStack(Items.SNOWBALL), 0x33bbff, 0x0088cc, blueChicken, logChicken).setSpawnType(SpawnType.SNOW);
-        chickens.add(snowballChicken);
 
         ChickensRegistryItem waterChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "water_chicken"), "water_chicken", new ResourceLocation("chickens", "textures/entity/water_chicken.png"), new ItemHolder("chickens:liquid_egg", "{id:\"minecraft:water\"}"), 0x000099, 0x8080ff, gunpowderChicken, snowballChicken);
         chickens.add(waterChicken);
@@ -127,7 +127,7 @@ public class ModChickens
         ChickensRegistryItem goldChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "gold_chicken"), "gold_chicken", new ResourceLocation("chickens", "textures/entity/gold_chicken.png"), new ItemStack(Items.RAW_GOLD), 0xcccc00, 0xffff80, ironChicken, yellowChicken);
         chickens.add(goldChicken);
 
-        ChickensRegistryItem blazeChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "blaze_chicken"), "blaze_chicken", new ResourceLocation("chickens", "textures/entity/blaze_chicken.png"), new ItemStack(Items.BLAZE_ROD), 0xffff66, 0xff3300, goldChicken, lavaChicken);
+        ChickensRegistryItem blazeChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "blaze_chicken"), "blaze_chicken", new ResourceLocation("chickens", "textures/entity/blaze_chicken.png"), new ItemStack(Items.BLAZE_ROD), 0xffff66, 0xff3300, flintChicken, lavaChicken);
         chickens.add(blazeChicken);
 
         ChickensRegistryItem slimeChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "slime_chicken"), "slime_chicken", new ResourceLocation("chickens", "textures/entity/slime_chicken.png"), new ItemStack(Items.SLIME_BALL), 0x009933, 0x99ffbb, clayChicken, greenChicken);
@@ -135,6 +135,12 @@ public class ModChickens
 
         ChickensRegistryItem amethystChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "amethyst_chicken"), "amethyst_chicken", new ResourceLocation("chickens", "textures/entity/amethyst_chicken.png"), new ItemStack(Items.AMETHYST_SHARD), 0x8d6acc, 0xfecbe6, purpleChicken, clayChicken);
         chickens.add(amethystChicken);
+
+        ChickensRegistryItem pShardChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "pshard_chicken"), "pshard_chicken", new ResourceLocation("chickens", "textures/entity/pshard_chicken.png"), new ItemStack(Items.PRISMARINE_SHARD), 0x43806e, 0x9fcbbc, waterChicken, blueChicken);
+        chickens.add(pShardChicken);
+
+        ChickensRegistryItem obsidianChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "obsidian_chicken"), "obsidian_chicken", new ResourceLocation("chickens", "textures/entity/obsidian_chicken.png"), new ItemStack(Blocks.OBSIDIAN, 1), 0x08080e, 0x463a60, waterChicken, lavaChicken);
+        chickens.add(obsidianChicken);
 
         // Tier 5
         ChickensRegistryItem diamondChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "diamond_chicken"), "diamond_chicken", new ResourceLocation("chickens", "textures/entity/diamond_chicken.png"), new ItemStack(Items.DIAMOND), 0x99ccff, 0xe6f2ff, glassChicken, goldChicken);
@@ -146,11 +152,8 @@ public class ModChickens
         ChickensRegistryItem magmaChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "magma_chicken"), "magma_chicken", new ResourceLocation("chickens", "textures/entity/magma_chicken.png"), new ItemStack(Items.MAGMA_CREAM), 0x1a0500, 0x000000, slimeChicken, blazeChicken);
         chickens.add(magmaChicken);
 
-        ChickensRegistryItem pShardChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "pshard_chicken"), "pshard_chicken", new ResourceLocation("chickens", "textures/entity/pshard_chicken.png"), new ItemStack(Items.PRISMARINE_SHARD), 0x43806e, 0x9fcbbc, waterChicken, blueChicken);
-        chickens.add(pShardChicken);
-
-        ChickensRegistryItem obsidianChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "obsidian_chicken"), "obsidian_chicken", new ResourceLocation("chickens", "textures/entity/obsidian_chicken.png"), new ItemStack(Blocks.OBSIDIAN, 1), 0x08080e, 0x463a60, waterChicken, lavaChicken);
-        chickens.add(obsidianChicken);
+        ChickensRegistryItem netheriteChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "netherite_chicken"), "netherite_chicken", new ResourceLocation("chickens", "textures/entity/netherite_chicken.png"), new ItemStack(Items.NETHERITE_SCRAP), 0x4a281d, 0x95867e, goldChicken, obsidianChicken);
+        chickens.add(netheriteChicken);
 
         // Tier 6
         ChickensRegistryItem emeraldChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "emerald_chicken"), "emerald_chicken", new ResourceLocation("chickens", "textures/entity/emerald_chicken.png"), new ItemStack(Items.EMERALD), 0x00cc00, 0x003300, diamondChicken, greenChicken);
@@ -161,9 +164,6 @@ public class ModChickens
 
         ChickensRegistryItem blackSkullChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "black_skull_chicken"), "black_skull_chicken", new ResourceLocation("chickens", "textures/entity/black_skull_chicken.png"), new ItemStack(Items.WITHER_ROSE), 0xa5a5a5, 0x3c4141, whiteChicken, ghastChicken).setDropItem(new ItemStack(Items.WITHER_SKELETON_SKULL));
         chickens.add(blackSkullChicken);
-
-        ChickensRegistryItem netheriteChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "netherite_chicken"), "netherite_chicken", new ResourceLocation("chickens", "textures/entity/netherite_chicken.png"), new ItemStack(Items.NETHERITE_SCRAP), 0x4a281d, 0x95867e, goldChicken, obsidianChicken);
-        chickens.add(netheriteChicken);
 
         // Tier 7
         ChickensRegistryItem pCrystalChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "pcrystal_chicken"), "pcrystal_chicken", new ResourceLocation("chickens", "textures/entity/pcrystal_chicken.png"), new ItemStack(Items.PRISMARINE_CRYSTALS, 1), 0x4e6961, 0xdfe9dc, waterChicken, emeraldChicken);
