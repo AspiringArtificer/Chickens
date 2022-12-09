@@ -7,9 +7,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Added
 - Spawn weight and minimum spawn distance configuration settings
 - Copper Chicken, Wither Skeleton Chicken, Wither Chicken
+- Amethyst Chicken, Netherite Chicken, Notch Chicken
+- Chicken breeding strength
 ### Fixed
 - Prismarine chicken french names
+- Growth stat not being used in roost lay rate
+- Roost lay rate now calculated from chicken stats 
+- Chicken count no longer affects roost lay rate
+### Changed
 - Bone White Chicken now lays bone meal by default
+- More chickens breed faster in the breeder
+- Balanced breeder and roost drop rates
 
 ## [1.0.30] 2022.11.16
 ### Fixed
