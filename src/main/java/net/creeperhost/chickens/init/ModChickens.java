@@ -31,7 +31,7 @@ public class ModChickens
         chickens.add(new ChickensRegistryItem(ChickensRegistry.NOTCH_CHICKEN_ID, "notch_chicken", new ResourceLocation("chickens", "textures/entity/notch_chicken.png"), new ItemStack(Items.GOLDEN_APPLE), 0x752802, 0xf6f892).setSpawnType(SpawnType.NONE));
 
         // dye chickens
-        ChickensRegistryItem whiteChicken = createDyeChicken(DyeColor.WHITE, "white_chicken").setLayItem(new ItemStack(Items.BONE_MEAL)).setDropItem(new ItemStack(Items.BONE)).setSpawnType(SpawnType.NORMAL);
+        ChickensRegistryItem whiteChicken = createDyeChicken(DyeColor.WHITE, "white_chicken").setLayItem(new ItemStack(Items.BONE_MEAL)).setDropItem(new ItemStack(Items.BONE)).setSpawnType(SpawnType.NORMAL).setSpawnWeight(8);
         chickens.add(whiteChicken);
         ChickensRegistryItem yellowChicken = createDyeChicken(DyeColor.YELLOW, "yellow_chicken");
         chickens.add(yellowChicken);
