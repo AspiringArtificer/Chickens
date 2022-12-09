@@ -4,14 +4,12 @@ import net.creeperhost.chickens.block.BlockBreeder;
 import net.creeperhost.chickens.capability.SmartInventory;
 import net.creeperhost.chickens.containers.ContainerBreeder;
 import net.creeperhost.chickens.data.ChickenStats;
-import net.creeperhost.chickens.entity.EntityChickensChicken;
 import net.creeperhost.chickens.init.ModBlocks;
 import net.creeperhost.chickens.init.ModItems;
 import net.creeperhost.chickens.item.ItemChicken;
 import net.creeperhost.chickens.item.ItemSpawnEgg;
 import net.creeperhost.chickens.registry.ChickensRegistry;
 import net.creeperhost.chickens.registry.ChickensRegistryItem;
-import net.creeperhost.chickens.util.InventoryHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Registry;
@@ -23,7 +21,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -31,17 +28,13 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.items.ItemHandlerHelper;
-import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
@@ -123,9 +116,9 @@ public class BlockEntityBreeder extends BlockEntity implements MenuProvider
         if(level.isClientSide) return;
         if(canWork)
         {
-            if (progress <= 1000)
+            if (progress <= ChickensRegistry.getByRegistryName(ItemChicken.getTypeFromStack(inventory.getStackInSlot(0))).getBreedTime())
             {
-                progress++;
+                progress += getProgressValue(inventory.getStackInSlot(0));
             } else
             {
                 ChickensRegistryItem chickensRegistryItem1 = ChickensRegistry.getByRegistryName(ItemSpawnEgg.getTypeFromStack(inventory.getStackInSlot(0)));
@@ -156,6 +149,13 @@ public class BlockEntityBreeder extends BlockEntity implements MenuProvider
         {
             progress = 0;
         }
+    }
+
+    public int getProgressValue(ItemStack itemStack)
+    {
+        ChickenStats chickenStats = new ChickenStats(itemStack);
+        int value = chickenStats.getStrength() + itemStack.getCount() + 1;
+        return Math.min(value, 50);
     }
 
     public ItemStack moveOutput(ItemStack stack)

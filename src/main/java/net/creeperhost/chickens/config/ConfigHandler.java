@@ -79,6 +79,9 @@ public class ConfigHandler
                 float layCoefficient = config.getFloat(registryName, "lay_coefficient", 1.0f, 0.01f, 100f);
                 chicken.setLayCoefficient(layCoefficient);
 
+                float breedCoefficient = config.getFloat(registryName, "breed_coefficient", 1.0f, 0.01f, 100f);
+                chicken.setBreedCoefficient(breedCoefficient);
+
                 chicken.setLayItem(loadItemStack(config, registryName, chicken, "lay_item", chicken.getLayItemHolder().setSource(registryName)));
                 chicken.setDropItem(loadItemStack(config, registryName, chicken, "drop_item", chicken.getDropItemHolder().setSource(registryName)));
 
@@ -127,6 +130,7 @@ public class ConfigHandler
                         String name = stringJsonElementEntry.getValue().getAsJsonObject().getAsJsonPrimitive("name").getAsString();
                         boolean enabled = stringJsonElementEntry.getValue().getAsJsonObject().getAsJsonPrimitive("is_enabled").getAsBoolean();
                         float layCoefficient = stringJsonElementEntry.getValue().getAsJsonObject().getAsJsonPrimitive("lay_coefficient").getAsFloat();
+                        float breedCoefficient = stringJsonElementEntry.getValue().getAsJsonObject().getAsJsonPrimitive("breed_coefficient").getAsFloat();
                         String stack = stringJsonElementEntry.getValue().getAsJsonObject().getAsJsonObject("lay_item").getAsJsonPrimitive("itemID").getAsString();
                         String nbt = "";
                         if(stringJsonElementEntry.getValue().getAsJsonObject().getAsJsonObject("lay_item").has("nbt"))
@@ -155,6 +159,7 @@ public class ConfigHandler
 
                         chickensRegistryItem.setEnabled(enabled);
                         chickensRegistryItem.setLayCoefficient(layCoefficient);
+                        chickensRegistryItem.setBreedCoefficient(breedCoefficient);
                         chickensRegistryItem.setSpawnType(spawnType);
                         chickensRegistryItem.setSpawnDistance(spawnDistance);
                         chickensRegistryItem.setSpawnWeight(spawnWeight);

@@ -5,6 +5,9 @@ import net.creeperhost.chickens.containers.slots.SlotChicken;
 import net.creeperhost.chickens.containers.slots.SlotOutput;
 import net.creeperhost.chickens.containers.slots.SlotSeed;
 import net.creeperhost.chickens.init.ModContainers;
+import net.creeperhost.chickens.item.ItemChicken;
+import net.creeperhost.chickens.registry.ChickensRegistry;
+import net.creeperhost.chickens.registry.ChickensRegistryItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
@@ -61,6 +64,11 @@ public class ContainerBreeder extends ContainerBase
 
     public int getProgress()
     {
-        return containerData.get(0);
+        ChickensRegistryItem item = ChickensRegistry.getByRegistryName(ItemChicken.getTypeFromStack(breeder.inventory.getStackInSlot(0)));
+        if(item == null)
+        {
+            return 0;
+        }
+        return containerData.get(0) * 1000 / item.getBreedTime();
     }
 }

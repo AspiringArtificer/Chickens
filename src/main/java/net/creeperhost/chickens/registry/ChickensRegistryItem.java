@@ -26,6 +26,7 @@ public class ChickensRegistryItem
     private int spawnWeight;
     private boolean isEnabled = true;
     private float layCoefficient = 1.0f;
+    private float breedCoefficient = 1.0f;
 
     public ChickensRegistryItem(ResourceLocation registryName, String entityName, ResourceLocation texture, ItemStack layItem, int bgColor, int fgColor)
     {
@@ -95,6 +96,12 @@ public class ChickensRegistryItem
     public ChickensRegistryItem setLayCoefficient(float coef)
     {
         layCoefficient = coef;
+        return this;
+    }
+
+    public ChickensRegistryItem setBreedCoefficient(float coef)
+    {
+        breedCoefficient = coef;
         return this;
     }
 
@@ -185,6 +192,11 @@ public class ChickensRegistryItem
     public int getMaxLayTime()
     {
         return 2 * getMinLayTime();
+    }
+
+    public int getBreedTime()
+    {
+        return (int) Math.max(6000 * getTier() * breedCoefficient, 1.0f);
     }
 
     public SpawnType getSpawnType()
