@@ -80,6 +80,9 @@
   "entity.chickens.black_skull_chicken":"Wither Skeleton Chicken",
   "entity.chickens.wither_chicken":"Wither Chicken",
   "entity.chickens.dangerous_wither_chicken":"Dangerous Wither Chicken",
+  "entity.chickens.amethyst_chicken":"Amethyst Chicken",
+  "entity.chickens.netherite_chicken":"Netherite Chicken",
+  "entity.chickens.notch_chicken":"Notch Chicken",
 
   "entity.ChickensChicken.tier":"Tier",
   "entity.ChickensChicken.layProgress":"Next egg in ~%1$smin.",

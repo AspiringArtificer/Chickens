@@ -79,5 +79,25 @@ public class ForgeEvents
                 }
             }
         }
+        else if(!player.getItemInHand(event.getHand()).isEmpty() && player.getItemInHand(event.getHand()).getItem() == Items.DRAGON_EGG
+                && ChickensRegistry.getByResourceLocation(ChickensRegistry.NOTCH_CHICKEN_ID).isEnabled())
+        {
+            Entity entity = event.getTarget();
+            if(entity.getType() == Registry.ENTITY_TYPE.get(ChickensRegistry.SMART_CHICKEN_ID))
+            {
+                EntityType<?> entityType = Registry.ENTITY_TYPE.get(ChickensRegistry.NOTCH_CHICKEN_ID);
+                EntityChickensChicken chicken = (EntityChickensChicken) entityType.create(level);
+                if(chicken != null)
+                {
+                    chicken.setPos(entity.position());
+                    level.addFreshEntity(chicken);
+                    entity.remove(Entity.RemovalReason.DISCARDED);
+                    if (!player.isCreative())
+                    {
+                        player.getItemInHand(event.getHand()).shrink(1);
+                    }
+                }
+            }
+        }
     }
 }

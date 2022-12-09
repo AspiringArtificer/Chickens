@@ -13,6 +13,7 @@ public final class ChickensRegistry
     private static final Map<String, ChickensRegistryItem> STRING_TO_ITEM = new HashMap<String, ChickensRegistryItem>();
 
     public static final ResourceLocation SMART_CHICKEN_ID = new ResourceLocation(ChickensMod.MODID, "smart_chicken");
+    public static final ResourceLocation NOTCH_CHICKEN_ID = new ResourceLocation(ChickensMod.MODID, "notch_chicken");
     public static final ResourceLocation WITHER_CHICKEN_ID = new ResourceLocation(ChickensMod.MODID, "wither_chicken");
     public static final ResourceLocation DANGEROUS_WITHER_CHICKEN_ID = new ResourceLocation(ChickensMod.MODID, "dangerous_wither_chicken");
     private static final Random rand = new Random();

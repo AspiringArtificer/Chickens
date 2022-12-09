@@ -80,6 +80,9 @@
   "entity.chickens.black_skull_chicken":"Poulet de Wither squelette",
   "entity.chickens.wither_chicken":"Poulet Wither",
   "entity.chickens.dangerous_wither_chicken":"Poulet Wither dangereux",
+  "entity.chickens.amethyst_chicken":"Poulet d'améthyste",
+  "entity.chickens.netherite_chicken":"Poulet de netherite",
+  "entity.chickens.notch_chicken":"Poulet Notch",
 
   "entity.ChickensChicken.tier":"Tier",
   "entity.ChickensChicken.layProgress":"L'œuf suivant dans ~%1$smin.",
