@@ -91,7 +91,7 @@ public class ModChickens
         ChickensRegistryItem glassChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "glass_chicken"), "glass_chicken", new ResourceLocation("chickens", "textures/entity/glass_chicken.png"), new ItemStack(Blocks.GLASS), 0xffffff, 0xeeeeff, quartzChicken, redstoneChicken);
         chickens.add(glassChicken);
 
-        ChickensRegistryItem ironChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "iron_chicken"), "iron_chicken", new ResourceLocation("chickens", "textures/entity/iron_chicken.png"), new ItemStack(Items.IRON_INGOT), 0xffffcc, 0xffcccc, flintChicken, whiteChicken);
+        ChickensRegistryItem ironChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "iron_chicken"), "iron_chicken", new ResourceLocation("chickens", "textures/entity/iron_chicken.png"), new ItemStack(Items.IRON_NUGGET), 0xffffcc, 0xffcccc, flintChicken, whiteChicken);
         chickens.add(ironChicken);
 
         ChickensRegistryItem coalChicken = new ChickensRegistryItem(new ResourceLocation(ChickensMod.MODID, "coal_chicken"), "coal_chicken", new ResourceLocation("chickens", "textures/entity/coal_chicken.png"), new ItemStack(Items.COAL), 0x262626, 0x000000, flintChicken, logChicken);
